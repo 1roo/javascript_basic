@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Math.random();  0.0 ~ 1.0 랜덤값
+        // Math.floor(); 내림   /   Math.ceil(); 올림   /   Math.round(); 반올림
+        // var rn1 = Math.floor((Math.random()*100)+1);
+        var plus = 0, minus = 0;
+        alert(`계산퀴즈를 시작합니다.\n '그만'을 입력하시면 종료합니다.`);
+        while (true) {
+            var rn1 = Math.floor((Math.random() * 20) + 1);
+            var rn2 = Math.floor((Math.random() * 20) + 1);
+            var n = Math.floor((Math.random() * 3) + 1);
+            var correct;
+            if (n == 1) {
+                var answer = prompt(rn1 + ' + ' + rn2 + ' = ?');
+                correct = rn1 + rn2;
+            } else if (n == 2) {
+                var answer = prompt(rn1 + ' - ' + rn2 + ' = ?');
+                correct = rn1 - rn2;
+            } else {
+                var answer = prompt(rn1 + ' * ' + rn2 + ' = ?');
+                correct = rn1 * rn2;
+            }
+
+            if (answer == correct) {
+                alert('정답입니다.');
+                plus++;
+            } else if (answer === '그만'){
+                alert(`정답 횟수: ${plus}회\n오답 횟수: ${minus}회`);
+                break;
+            } else {
+                alert('오답입니다.');
+                minus++;
+            }
+
+        }
+
+    
+    </script>
+
+</body>
+
+</html>
